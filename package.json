@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.2",
+    "ws": "^8.14.2"
+  },
+  "name": "nodejs-express-typescript",
+  "description": "1. create folder\r 2. install tsc typeacript ts-node ts-node-dev \r     โดยใช้คำสั่ง : npm i tsc typescript ts-node ts-node-dev\r     ts-node-dev มีหน้าที่ ใช้กรณีที่ต้องการ run แล้วให้ process ค้างไว้ restart ให้อัตโนมัติ\r 3. (ไม่จำเป็นต้องทำ)compile and convert to type script\r     โดยใช้คำสั่ง : tsc server.js\r 4. ใช้คำสั่ง ts-node server.ts เพื่อใช้ในการสั่ง run ได้เลย และทำให้สามารถลบไฟล์ server.js ออกได้เลยเพราะไม่จำเป็นต้องใช้แล้ว\r     ts-node มีหน้าที่ เรียก tsc เพื่อ complie และเรียก node เพื่อ run\r 5.  create file config for typescript\r     คำสั่ง : tsc --init\r     จะได้ไฟล์ tconfig.json \r     ใน Modules => rootDir กำหนด path folder ที่จะ complie\r 6. create folder 'src'\r     ย้าย server.ts to src folder\r 7. edit file tconfig.json\r     add \"outDir\": \"./dist\" in Modules เพื่อเก็บไฟล์ที่ได้จากการ complie\r     สามารถทดสอบด้วยคำสั่ง tsc จะได้ folder และ file ที่ compile ขึ้นมา\r 8. uncomment  \"allowJs\": true in  JavaScript Support in tconfig.json\r     เพื่อที่จะสามารถ complie javascript ได้ด้วย\r 9. generate file package.json \r     คำสั่ง npm init --y\r 9. install lib express for API\r     คำสั่ง : npm i express จะได้ไฟล์ pakage.json มา",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/pg": "^8.11.0",
+    "@types/ws": "^8.5.10",
+    "nodemon": "^3.0.3"
+  },
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
